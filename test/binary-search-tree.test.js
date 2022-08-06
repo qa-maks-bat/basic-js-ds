@@ -23,7 +23,7 @@ describe('Binary search tree', () => {
 
     it.optional('has methods', () => {
       const instance = new BinarySearchTree();
-      expect(instance).to.respondTo('root');
+      expect(instance).to.respondTo('getRoot');
       expect(instance).to.respondTo('add');
       expect(instance).to.respondTo('find');
       expect(instance).to.respondTo('has');
@@ -37,7 +37,7 @@ describe('Binary search tree', () => {
   describe('functional requirements', () => {
     it.optional('returns correct root if no value added', () => {
       const tree = new BinarySearchTree();
-      assert.strictEqual(tree.root(), null);
+      assert.strictEqual(tree.getRoot(), null);
     });
 
     it.optional('root works correctly some values were added', () => {
@@ -45,7 +45,7 @@ describe('Binary search tree', () => {
       tree.add(2);
       tree.add(3);
       tree.add(4);
-      assert.strictEqual(tree.root().data, 2);
+      assert.strictEqual(tree.getRoot().data, 2);
     });
 
     it.optional('find existing values', () => {
